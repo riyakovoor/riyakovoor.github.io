@@ -1,5 +1,10 @@
 ---
-title: "website"
+title: "RIYA MATHEW KOVOOR"
+
+![](images/Website.JPEG){width=250px}
+
+Hi! I’m originally from India and moved to Canada for my Master of Data Science in Computational Linguistics at UBC. Before MDS, I studied Computer Science and explored different areas of tech. Now, I’m excited to see where the program takes me next!
+
 ---
 
 This is a Quarto website.
