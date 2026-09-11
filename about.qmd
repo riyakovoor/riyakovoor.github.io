@@ -1,6 +1,12 @@
 ---
 title: "About"
 
+
+---
+
+
+A little about me :)
+
 ## Background
 
 I have always enjoyed learning how technology can be used to solve real-world problems. My earlier studies gave me a chance to explore different areas of tech and work on projects that helped shape my interests.
@@ -12,6 +18,3 @@ What interested me about the program was the opportunity to work with data while
 ## Outside of data science
 
 When I am not studying, I love travelling, exploring new places, trying different foods, and taking photos. I am always up for a new café, a spontaneous plan, or exploring somewhere I have not been before.
----
-
-About this site

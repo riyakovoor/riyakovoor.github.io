@@ -1,16 +1,51 @@
 [
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "blog.html",
+    "href": "blog.html",
+    "title": "Blog",
     "section": "",
-    "text": "About this site"
+    "text": "My first weeks in MDS\n\n\n\n\n\n\n\n\nSep 11, 2026\n\n\nRiya Mathew Kovoor\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "website",
+    "title": "RIYA MATHEW KOVOOR",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+    "text": "Hi! I’m originally from India and moved to Canada for my Master of Data Science in Computational Linguistics at UBC. Before MDS, I studied Computer Science and explored different areas of tech. Now, I’m excited to see where the program takes me next!"
+  },
+  {
+    "objectID": "posts/first-weeks/index.html",
+    "href": "posts/first-weeks/index.html",
+    "title": "My first weeks in MDS",
+    "section": "",
+    "text": "My first weeks in MDS\nStarting MDS was a little different from what I had imagined. Due to visa delays, I unfortunately missed orientation and arrived a week after the program had already started. So, there was definitely a lot to take in all at once. Walking into a new program and trying to catch up on everything was overwhelming, but also exciting.\nWhat made the experience much easier was how welcoming everyone has been. My classmates have been incredibly kind and helpful, and the professors have been understanding and supportive as I catch up. Even though I started later than everyone else, I’ve already felt like I’m part of the community, which has made a stressful first day feel a lot more manageable.\nI’m still figuring out the pace of the program and everything that comes with starting MDS, but I’m excited to see where the next few months take me. It’s definitely been a slightly unusual start, but I’m looking forward to catching up, meeting more people, and getting into the rhythm of the program.\n\n\n\nFirst day of classes - for me!"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "A little about me :)"
+  },
+  {
+    "objectID": "about.html#background",
+    "href": "about.html#background",
+    "title": "About",
+    "section": "Background",
+    "text": "Background\nI have always enjoyed learning how technology can be used to solve real-world problems. My earlier studies gave me a chance to explore different areas of tech and work on projects that helped shape my interests."
+  },
+  {
+    "objectID": "about.html#why-data-science",
+    "href": "about.html#why-data-science",
+    "title": "About",
+    "section": "Why data science",
+    "text": "Why data science\nWhat interested me about the program was the opportunity to work with data while developing practical skills in areas like programming, statistics, and problem-solving. I am excited to see how I can apply what I learn to real-world challenges."
+  },
+  {
+    "objectID": "about.html#outside-of-data-science",
+    "href": "about.html#outside-of-data-science",
+    "title": "About",
+    "section": "Outside of data science",
+    "text": "Outside of data science\nWhen I am not studying, I love travelling, exploring new places, trying different foods, and taking photos. I am always up for a new café, a spontaneous plan, or exploring somewhere I have not been before."
   }
 ]
