@@ -1,0 +1,14 @@
+---
+title: "Palmer Penguins for Python"
+author: "Riya Mathew Kovoor"
+date: 2026-09-23
+---
+Analysis for Python
+
+```{python}
+#| echo: true
+#| label: Analysis in Python
+
+import sys
+print(sys.executable)
+```
