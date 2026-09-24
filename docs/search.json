@@ -18,7 +18,14 @@
     "href": "posts/penguin_python/index.html",
     "title": "Palmer Penguins for Python",
     "section": "",
-    "text": "Analysis for Python\n\nimport sys\nprint(sys.executable)\n\n/Users/riyakovoor/Desktop/DSCI521/riyakovoor.github.io/.venv/bin/python3"
+    "text": "Analysis for Python"
+  },
+  {
+    "objectID": "posts/penguin_python/index.html#data",
+    "href": "posts/penguin_python/index.html#data",
+    "title": "Palmer Penguins for Python",
+    "section": "Data",
+    "text": "Data\nData: Palmer Penguins, Palmer Station Antarctica LTER.\n\nimport sys\nprint(sys.executable)\n\n/Users/riyakovoor/Desktop/DSCI521/riyakovoor.github.io/.venv/bin/python3"
   },
   {
     "objectID": "posts/first-weeks/index.html",
@@ -32,7 +39,35 @@
     "href": "posts/penguin_r/index.html",
     "title": "Palmer Penguins for R",
     "section": "",
-    "text": "Analysis for R\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\n\npenguins_data &lt;- penguins\nhead(penguins_data)\n\n# A tibble: 6 × 8\n  species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g\n  &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;\n1 Adelie  Torgersen           39.1          18.7               181        3750\n2 Adelie  Torgersen           39.5          17.4               186        3800\n3 Adelie  Torgersen           40.3          18                 195        3250\n4 Adelie  Torgersen           NA            NA                  NA          NA\n5 Adelie  Torgersen           36.7          19.3               193        3450\n6 Adelie  Torgersen           39.3          20.6               190        3650\n# ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;\n\n#| label: fig-penguin-mass\n#| fig-cap: \"Body mass of penguins by species.\""
+    "text": "Analysis for R"
+  },
+  {
+    "objectID": "posts/penguin_r/index.html#data",
+    "href": "posts/penguin_r/index.html#data",
+    "title": "Palmer Penguins for R",
+    "section": "Data",
+    "text": "Data\nData: Palmer Penguins, Palmer Station Antarctica LTER."
+  },
+  {
+    "objectID": "posts/penguin_r/index.html#installation-of-libraries",
+    "href": "posts/penguin_r/index.html#installation-of-libraries",
+    "title": "Palmer Penguins for R",
+    "section": "Installation of Libraries",
+    "text": "Installation of Libraries\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)"
+  },
+  {
+    "objectID": "posts/penguin_r/index.html#exploring-the-data",
+    "href": "posts/penguin_r/index.html#exploring-the-data",
+    "title": "Palmer Penguins for R",
+    "section": "Exploring the Data",
+    "text": "Exploring the Data\n\npenguins_data &lt;- penguins\nhead(penguins_data)\n\n# A tibble: 6 × 8\n  species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g\n  &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;\n1 Adelie  Torgersen           39.1          18.7               181        3750\n2 Adelie  Torgersen           39.5          17.4               186        3800\n3 Adelie  Torgersen           40.3          18                 195        3250\n4 Adelie  Torgersen           NA            NA                  NA          NA\n5 Adelie  Torgersen           36.7          19.3               193        3450\n6 Adelie  Torgersen           39.3          20.6               190        3650\n# ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;\n\n#| label: fig-penguin-mass\n#| fig-cap: \"Body mass of penguins by species.\""
+  },
+  {
+    "objectID": "posts/penguin_r/index.html#data-wrangling",
+    "href": "posts/penguin_r/index.html#data-wrangling",
+    "title": "Palmer Penguins for R",
+    "section": "Data Wrangling",
+    "text": "Data Wrangling\n\nLet’s remove all the empty NA values.\n\npenguins_data &lt;- penguins_data |&gt;\n    drop_na()\nhead(penguins_data)\n\n# A tibble: 6 × 8\n  species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g\n  &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;\n1 Adelie  Torgersen           39.1          18.7               181        3750\n2 Adelie  Torgersen           39.5          17.4               186        3800\n3 Adelie  Torgersen           40.3          18                 195        3250\n4 Adelie  Torgersen           36.7          19.3               193        3450\n5 Adelie  Torgersen           39.3          20.6               190        3650\n6 Adelie  Torgersen           38.9          17.8               181        3625\n# ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;\n\n\n\n\nWhy don’t we sort the rows based on decreasing value of body mass?\n\npenguins_data &lt;- penguins_data |&gt;\n    arrange(desc(body_mass_g))\n\nhead(penguins_data)\n\n# A tibble: 6 × 8\n  species island bill_length_mm bill_depth_mm flipper_length_mm body_mass_g\n  &lt;fct&gt;   &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;\n1 Gentoo  Biscoe           49.2          15.2               221        6300\n2 Gentoo  Biscoe           59.6          17                 230        6050\n3 Gentoo  Biscoe           51.1          16.3               220        6000\n4 Gentoo  Biscoe           48.8          16.2               222        6000\n5 Gentoo  Biscoe           45.2          16.4               223        5950\n6 Gentoo  Biscoe           49.8          15.9               229        5950\n# ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;\n\n\n\n\nHow does average body mass differ between species?\n\npenguins_data &lt;- penguins_data |&gt;\n    group_by(species) |&gt;\n    summarise(mean_body_mass = mean(body_mass_g))\npenguins_data\n\n# A tibble: 3 × 2\n  species   mean_body_mass\n  &lt;fct&gt;              &lt;dbl&gt;\n1 Adelie             3706.\n2 Chinstrap          3733.\n3 Gentoo             5092."
   },
   {
     "objectID": "about.html",
