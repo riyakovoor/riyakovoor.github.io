@@ -22,9 +22,6 @@ library(tidyverse)
 ```{r}
 penguins_data <- penguins
 head(penguins_data)
-
-#| label: fig-penguin-mass
-#| fig-cap: "Body mass of penguins by species."
 ```
 
 ## Data Wrangling
@@ -50,6 +47,28 @@ head(penguins_data)
 ```{r}
 penguins_data <- penguins_data |>
     group_by(species) |>
-    summarise(mean_body_mass = mean(body_mass_g))
+    summarise(mean_body_mass = mean(body_mass_g)) |>
+    arrange(desc(mean_body_mass))
 penguins_data
 ```
+
+## Data Visualisation
+
+```{r}
+#| label: fig-mean-body-mass
+#| fig-cap: "Average body mass of penguins by species."
+
+ggplot(penguins_data, aes(x = species, y = mean_body_mass)) +
+  geom_col() +
+  labs(
+    x = "Species",
+    y = "Average Body Mass (g)"
+  )
+```
+
+## What I have Done
+
+**Dataset:** I chose the Palmer Penguins dataset, which contains information about penguins observed at Palmer Station in Antarctica. The dataset includes measurements such as species, island, bill length, bill depth, flipper length, body mass, sex, and year. I used this dataset to explore how body mass differs across penguin species.
+
+
+**Discovery:** After removing the missing values, I sorted the penguins by body mass and calculated the average body mass for each species. The results show that Gentoo penguins had the highest average body mass at about 5092 g, while Adelie and Chinstrap penguins had similar average body masses of about 3706 g and 3733 g, respectively.

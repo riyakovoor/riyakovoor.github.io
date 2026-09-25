@@ -25,7 +25,42 @@
     "href": "posts/penguin_python/index.html#data",
     "title": "Palmer Penguins for Python",
     "section": "Data",
-    "text": "Data\nData: Palmer Penguins, Palmer Station Antarctica LTER.\n\nimport sys\nprint(sys.executable)\n\n/Users/riyakovoor/Desktop/DSCI521/riyakovoor.github.io/.venv/bin/python3"
+    "text": "Data\nData: Palmer Penguins, Palmer Station Antarctica LTER."
+  },
+  {
+    "objectID": "posts/penguin_python/index.html#installation-of-libraries",
+    "href": "posts/penguin_python/index.html#installation-of-libraries",
+    "title": "Palmer Penguins for Python",
+    "section": "Installation of Libraries",
+    "text": "Installation of Libraries\n\nimport sys\nprint(sys.executable)\nimport pandas as pd\nimport matplotlib.pyplot as plt\nfrom palmerpenguins import load_penguins\n\n/Users/riyakovoor/Desktop/DSCI521/riyakovoor.github.io/.venv/bin/python3"
+  },
+  {
+    "objectID": "posts/penguin_python/index.html#exploring-the-data",
+    "href": "posts/penguin_python/index.html#exploring-the-data",
+    "title": "Palmer Penguins for Python",
+    "section": "Exploring the Data",
+    "text": "Exploring the Data\n\npenguins_data = load_penguins()\n\npenguins_data.head()\n\n\n\n\n\n\n\n\nspecies\nisland\nbill_length_mm\nbill_depth_mm\nflipper_length_mm\nbody_mass_g\nsex\nyear\n\n\n\n\n0\nAdelie\nTorgersen\n39.1\n18.7\n181.0\n3750.0\nmale\n2007\n\n\n1\nAdelie\nTorgersen\n39.5\n17.4\n186.0\n3800.0\nfemale\n2007\n\n\n2\nAdelie\nTorgersen\n40.3\n18.0\n195.0\n3250.0\nfemale\n2007\n\n\n3\nAdelie\nTorgersen\nNaN\nNaN\nNaN\nNaN\nNaN\n2007\n\n\n4\nAdelie\nTorgersen\n36.7\n19.3\n193.0\n3450.0\nfemale\n2007"
+  },
+  {
+    "objectID": "posts/penguin_python/index.html#data-wrangling",
+    "href": "posts/penguin_python/index.html#data-wrangling",
+    "title": "Palmer Penguins for Python",
+    "section": "Data Wrangling",
+    "text": "Data Wrangling\n\nLet’s remove all the empty NA values.\n\npenguins_data = penguins_data.dropna()\n\npenguins_data.head()\n\n\n\n\n\n\n\n\nspecies\nisland\nbill_length_mm\nbill_depth_mm\nflipper_length_mm\nbody_mass_g\nsex\nyear\n\n\n\n\n0\nAdelie\nTorgersen\n39.1\n18.7\n181.0\n3750.0\nmale\n2007\n\n\n1\nAdelie\nTorgersen\n39.5\n17.4\n186.0\n3800.0\nfemale\n2007\n\n\n2\nAdelie\nTorgersen\n40.3\n18.0\n195.0\n3250.0\nfemale\n2007\n\n\n4\nAdelie\nTorgersen\n36.7\n19.3\n193.0\n3450.0\nfemale\n2007\n\n\n5\nAdelie\nTorgersen\n39.3\n20.6\n190.0\n3650.0\nmale\n2007\n\n\n\n\n\n\n\n\n\nWhy don’t we sort the rows based on decreasing value of body mass?\n\npenguins_data = penguins_data.sort_values(\"body_mass_g\", ascending=False)\n\npenguins_data.head()\n\n\n\n\n\n\n\n\nspecies\nisland\nbill_length_mm\nbill_depth_mm\nflipper_length_mm\nbody_mass_g\nsex\nyear\n\n\n\n\n169\nGentoo\nBiscoe\n49.2\n15.2\n221.0\n6300.0\nmale\n2007\n\n\n185\nGentoo\nBiscoe\n59.6\n17.0\n230.0\n6050.0\nmale\n2007\n\n\n269\nGentoo\nBiscoe\n48.8\n16.2\n222.0\n6000.0\nmale\n2009\n\n\n229\nGentoo\nBiscoe\n51.1\n16.3\n220.0\n6000.0\nmale\n2008\n\n\n263\nGentoo\nBiscoe\n49.8\n15.9\n229.0\n5950.0\nmale\n2009\n\n\n\n\n\n\n\n\n\nHow does average body mass differ between species?\n\npenguins_data = (\n    penguins_data\n    .groupby(\"species\", as_index=False)\n    .agg(mean_body_mass=(\"body_mass_g\", \"mean\")))\n\n\npenguins_data\n\n\n\n\n\n\n\n\nspecies\nmean_body_mass\n\n\n\n\n0\nAdelie\n3706.164384\n\n\n1\nChinstrap\n3733.088235\n\n\n2\nGentoo\n5092.436975"
+  },
+  {
+    "objectID": "posts/penguin_python/index.html#data-visualisation",
+    "href": "posts/penguin_python/index.html#data-visualisation",
+    "title": "Palmer Penguins for Python",
+    "section": "Data Visualisation",
+    "text": "Data Visualisation\n\nplt.bar(penguins_data[\"species\"], penguins_data[\"mean_body_mass\"])\nplt.xlabel(\"Species\")\nplt.ylabel(\"Average Body Mass (g)\")\nplt.title(\"Average Body Mass by Penguin Species\")\nplt.show()"
+  },
+  {
+    "objectID": "posts/penguin_python/index.html#what-i-have-done",
+    "href": "posts/penguin_python/index.html#what-i-have-done",
+    "title": "Palmer Penguins for Python",
+    "section": "What I have Done",
+    "text": "What I have Done\nDataset: I chose the Palmer Penguins dataset, which contains information about penguins observed at Palmer Station in Antarctica. The dataset includes measurements such as species, island, bill length, bill depth, flipper length, body mass, sex, and year. I used this dataset to explore how body mass differs across penguin species.\nDiscovery: After removing the missing values, I sorted the penguins by body mass and calculated the average body mass for each species using Python. The results show that Gentoo penguins had the highest average body mass at about 5092 g, while Adelie and Chinstrap penguins had similar average body masses of about 3706 g and 3733 g, respectively."
   },
   {
     "objectID": "posts/first-weeks/index.html",
@@ -60,14 +95,28 @@
     "href": "posts/penguin_r/index.html#exploring-the-data",
     "title": "Palmer Penguins for R",
     "section": "Exploring the Data",
-    "text": "Exploring the Data\n\npenguins_data &lt;- penguins\nhead(penguins_data)\n\n# A tibble: 6 × 8\n  species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g\n  &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;\n1 Adelie  Torgersen           39.1          18.7               181        3750\n2 Adelie  Torgersen           39.5          17.4               186        3800\n3 Adelie  Torgersen           40.3          18                 195        3250\n4 Adelie  Torgersen           NA            NA                  NA          NA\n5 Adelie  Torgersen           36.7          19.3               193        3450\n6 Adelie  Torgersen           39.3          20.6               190        3650\n# ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;\n\n#| label: fig-penguin-mass\n#| fig-cap: \"Body mass of penguins by species.\""
+    "text": "Exploring the Data\n\npenguins_data &lt;- penguins\nhead(penguins_data)\n\n# A tibble: 6 × 8\n  species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g\n  &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;\n1 Adelie  Torgersen           39.1          18.7               181        3750\n2 Adelie  Torgersen           39.5          17.4               186        3800\n3 Adelie  Torgersen           40.3          18                 195        3250\n4 Adelie  Torgersen           NA            NA                  NA          NA\n5 Adelie  Torgersen           36.7          19.3               193        3450\n6 Adelie  Torgersen           39.3          20.6               190        3650\n# ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;"
   },
   {
     "objectID": "posts/penguin_r/index.html#data-wrangling",
     "href": "posts/penguin_r/index.html#data-wrangling",
     "title": "Palmer Penguins for R",
     "section": "Data Wrangling",
-    "text": "Data Wrangling\n\nLet’s remove all the empty NA values.\n\npenguins_data &lt;- penguins_data |&gt;\n    drop_na()\nhead(penguins_data)\n\n# A tibble: 6 × 8\n  species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g\n  &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;\n1 Adelie  Torgersen           39.1          18.7               181        3750\n2 Adelie  Torgersen           39.5          17.4               186        3800\n3 Adelie  Torgersen           40.3          18                 195        3250\n4 Adelie  Torgersen           36.7          19.3               193        3450\n5 Adelie  Torgersen           39.3          20.6               190        3650\n6 Adelie  Torgersen           38.9          17.8               181        3625\n# ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;\n\n\n\n\nWhy don’t we sort the rows based on decreasing value of body mass?\n\npenguins_data &lt;- penguins_data |&gt;\n    arrange(desc(body_mass_g))\n\nhead(penguins_data)\n\n# A tibble: 6 × 8\n  species island bill_length_mm bill_depth_mm flipper_length_mm body_mass_g\n  &lt;fct&gt;   &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;\n1 Gentoo  Biscoe           49.2          15.2               221        6300\n2 Gentoo  Biscoe           59.6          17                 230        6050\n3 Gentoo  Biscoe           51.1          16.3               220        6000\n4 Gentoo  Biscoe           48.8          16.2               222        6000\n5 Gentoo  Biscoe           45.2          16.4               223        5950\n6 Gentoo  Biscoe           49.8          15.9               229        5950\n# ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;\n\n\n\n\nHow does average body mass differ between species?\n\npenguins_data &lt;- penguins_data |&gt;\n    group_by(species) |&gt;\n    summarise(mean_body_mass = mean(body_mass_g))\npenguins_data\n\n# A tibble: 3 × 2\n  species   mean_body_mass\n  &lt;fct&gt;              &lt;dbl&gt;\n1 Adelie             3706.\n2 Chinstrap          3733.\n3 Gentoo             5092."
+    "text": "Data Wrangling\n\nLet’s remove all the empty NA values.\n\npenguins_data &lt;- penguins_data |&gt;\n    drop_na()\nhead(penguins_data)\n\n# A tibble: 6 × 8\n  species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g\n  &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;\n1 Adelie  Torgersen           39.1          18.7               181        3750\n2 Adelie  Torgersen           39.5          17.4               186        3800\n3 Adelie  Torgersen           40.3          18                 195        3250\n4 Adelie  Torgersen           36.7          19.3               193        3450\n5 Adelie  Torgersen           39.3          20.6               190        3650\n6 Adelie  Torgersen           38.9          17.8               181        3625\n# ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;\n\n\n\n\nWhy don’t we sort the rows based on decreasing value of body mass?\n\npenguins_data &lt;- penguins_data |&gt;\n    arrange(desc(body_mass_g))\n\nhead(penguins_data)\n\n# A tibble: 6 × 8\n  species island bill_length_mm bill_depth_mm flipper_length_mm body_mass_g\n  &lt;fct&gt;   &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;\n1 Gentoo  Biscoe           49.2          15.2               221        6300\n2 Gentoo  Biscoe           59.6          17                 230        6050\n3 Gentoo  Biscoe           51.1          16.3               220        6000\n4 Gentoo  Biscoe           48.8          16.2               222        6000\n5 Gentoo  Biscoe           45.2          16.4               223        5950\n6 Gentoo  Biscoe           49.8          15.9               229        5950\n# ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;\n\n\n\n\nHow does average body mass differ between species?\n\npenguins_data &lt;- penguins_data |&gt;\n    group_by(species) |&gt;\n    summarise(mean_body_mass = mean(body_mass_g)) |&gt;\n    arrange(desc(mean_body_mass))\npenguins_data\n\n# A tibble: 3 × 2\n  species   mean_body_mass\n  &lt;fct&gt;              &lt;dbl&gt;\n1 Gentoo             5092.\n2 Chinstrap          3733.\n3 Adelie             3706."
+  },
+  {
+    "objectID": "posts/penguin_r/index.html#data-visualisation",
+    "href": "posts/penguin_r/index.html#data-visualisation",
+    "title": "Palmer Penguins for R",
+    "section": "Data Visualisation",
+    "text": "Data Visualisation\n\nggplot(penguins_data, aes(x = species, y = mean_body_mass)) +\n  geom_col() +\n  labs(\n    x = \"Species\",\n    y = \"Average Body Mass (g)\"\n  )\n\n\n\n\n\n\n\nFigure 1: Average body mass of penguins by species."
+  },
+  {
+    "objectID": "posts/penguin_r/index.html#what-i-have-done",
+    "href": "posts/penguin_r/index.html#what-i-have-done",
+    "title": "Palmer Penguins for R",
+    "section": "What I have Done",
+    "text": "What I have Done\nDataset: I chose the Palmer Penguins dataset, which contains information about penguins observed at Palmer Station in Antarctica. The dataset includes measurements such as species, island, bill length, bill depth, flipper length, body mass, sex, and year. I used this dataset to explore how body mass differs across penguin species.\nDiscovery: After removing the missing values, I sorted the penguins by body mass and calculated the average body mass for each species. The results show that Gentoo penguins had the highest average body mass at about 5092 g, while Adelie and Chinstrap penguins had similar average body masses of about 3706 g and 3733 g, respectively."
   },
   {
     "objectID": "about.html",

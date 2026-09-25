@@ -9,10 +9,75 @@ Analysis for Python
 
 Data: [Palmer Penguins](https://allisonhorst.github.io/palmerpenguins/), Palmer Station Antarctica LTER.
 
+
+## Installation of Libraries
+
 ```{python}
-#| echo: true
-#| label: Analysis in Python
+#| message: false
+#| warning: false
 
 import sys
 print(sys.executable)
+import pandas as pd
+import matplotlib.pyplot as plt
+from palmerpenguins import load_penguins
 ```
+
+
+## Exploring the Data
+
+```{python}
+penguins_data = load_penguins()
+
+penguins_data.head()
+```
+
+
+## Data Wrangling
+
+
+#### **Let's remove all the empty NA values.**
+
+```{python}
+penguins_data = penguins_data.dropna()
+
+penguins_data.head()
+```
+
+#### **Why don't we sort the rows based on decreasing value of body mass?**
+
+```{python}
+penguins_data = penguins_data.sort_values("body_mass_g", ascending=False)
+
+penguins_data.head()
+```
+
+#### **How does average body mass differ between species?**
+
+```{python}
+penguins_data = (
+    penguins_data
+    .groupby("species", as_index=False)
+    .agg(mean_body_mass=("body_mass_g", "mean")))
+
+
+penguins_data
+```
+
+
+## Data Visualisation
+
+```{python}
+plt.bar(penguins_data["species"], penguins_data["mean_body_mass"])
+plt.xlabel("Species")
+plt.ylabel("Average Body Mass (g)")
+plt.title("Average Body Mass by Penguin Species")
+plt.show()
+```
+
+
+## What I have Done
+
+**Dataset:** I chose the Palmer Penguins dataset, which contains information about penguins observed at Palmer Station in Antarctica. The dataset includes measurements such as species, island, bill length, bill depth, flipper length, body mass, sex, and year. I used this dataset to explore how body mass differs across penguin species.
+
+**Discovery:** After removing the missing values, I sorted the penguins by body mass and calculated the average body mass for each species using Python. The results show that Gentoo penguins had the highest average body mass at about 5092 g, while Adelie and Chinstrap penguins had similar average body masses of about 3706 g and 3733 g, respectively.
