@@ -53,7 +53,7 @@
     "href": "posts/penguin_python/index.html#data-visualisation",
     "title": "Palmer Penguins for Python",
     "section": "Data Visualisation",
-    "text": "Data Visualisation\n\nplt.bar(penguins_data[\"species\"], penguins_data[\"mean_body_mass\"])\nplt.xlabel(\"Species\")\nplt.ylabel(\"Average Body Mass (g)\")\nplt.title(\"Average Body Mass by Penguin Species\")\nplt.show()"
+    "text": "Data Visualisation\n\nplt.bar(penguins_data[\"species\"], penguins_data[\"mean_body_mass\"])\nplt.xlabel(\"Species\")\nplt.ylabel(\"Average Body Mass (g)\")\nplt.title(\"Average Body Mass by Penguin Species\")\nplt.show()\n\n\n\n\n\n\n\nFigure 1: Average body mass of penguins by species."
   },
   {
     "objectID": "posts/penguin_python/index.html#what-i-have-done",

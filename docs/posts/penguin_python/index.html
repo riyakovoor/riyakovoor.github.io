@@ -213,7 +213,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="installation-of-libraries" class="level2">
 <h2 class="anchored" data-anchor-id="installation-of-libraries">Installation of Libraries</h2>
-<div id="09d66b5b" class="cell" data-message="false" data-execution_count="1">
+<div id="3c63611e" class="cell" data-message="false" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sys.executable)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -226,7 +226,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="exploring-the-data" class="level2">
 <h2 class="anchored" data-anchor-id="exploring-the-data">Exploring the Data</h2>
-<div id="28d2ea66" class="cell" data-execution_count="2">
+<div id="e09f33d2" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>penguins_data <span class="op">=</span> load_penguins()</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>penguins_data.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -315,7 +315,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="data-wrangling">Data Wrangling</h2>
 <section id="lets-remove-all-the-empty-na-values." class="level4">
 <h4 class="anchored" data-anchor-id="lets-remove-all-the-empty-na-values."><strong>Let’s remove all the empty NA values.</strong></h4>
-<div id="dc975cd7" class="cell" data-execution_count="3">
+<div id="80f86d6e" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>penguins_data <span class="op">=</span> penguins_data.dropna()</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>penguins_data.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -402,7 +402,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="why-dont-we-sort-the-rows-based-on-decreasing-value-of-body-mass" class="level4">
 <h4 class="anchored" data-anchor-id="why-dont-we-sort-the-rows-based-on-decreasing-value-of-body-mass"><strong>Why don’t we sort the rows based on decreasing value of body mass?</strong></h4>
-<div id="c810b53f" class="cell" data-execution_count="4">
+<div id="9e2189b3" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>penguins_data <span class="op">=</span> penguins_data.sort_values(<span class="st">"body_mass_g"</span>, ascending<span class="op">=</span><span class="va">False</span>)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>penguins_data.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -489,7 +489,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="how-does-average-body-mass-differ-between-species" class="level4">
 <h4 class="anchored" data-anchor-id="how-does-average-body-mass-differ-between-species"><strong>How does average body mass differ between species?</strong></h4>
-<div id="799e0bb1" class="cell" data-execution_count="5">
+<div id="9f5e3504" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>penguins_data <span class="op">=</span> (</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    penguins_data</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    .groupby(<span class="st">"species"</span>, as_index<span class="op">=</span><span class="va">False</span>)</span>
@@ -535,16 +535,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="data-visualisation" class="level2">
 <h2 class="anchored" data-anchor-id="data-visualisation">Data Visualisation</h2>
-<div id="9d292af8" class="cell" data-execution_count="6">
+<div id="cell-fig-mean-body-mass" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>plt.bar(penguins_data[<span class="st">"species"</span>], penguins_data[<span class="st">"mean_body_mass"</span>])</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Species"</span>)</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Average Body Mass (g)"</span>)</span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Average Body Mass by Penguin Species"</span>)</span>
 <span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="index_files/figure-html/cell-7-output-1.png" width="602" height="451" class="figure-img"></p>
+<div id="fig-mean-body-mass" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-mean-body-mass-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="index_files/figure-html/fig-mean-body-mass-output-1.png" width="602" height="451" class="figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-mean-body-mass-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Average body mass of penguins by species.
+</figcaption>
 </figure>
 </div>
 </div>

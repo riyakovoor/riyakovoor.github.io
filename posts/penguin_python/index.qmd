@@ -68,6 +68,8 @@ penguins_data
 ## Data Visualisation
 
 ```{python}
+#| label: fig-mean-body-mass
+#| fig-cap: "Average body mass of penguins by species."
 plt.bar(penguins_data["species"], penguins_data["mean_body_mass"])
 plt.xlabel("Species")
 plt.ylabel("Average Body Mass (g)")
